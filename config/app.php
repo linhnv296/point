@@ -227,5 +227,17 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
-
+    "register_course" => [
+        "Tiếng Nhật N5",
+        "Tiếng Nhật N4",
+        "Tiếng Nhật N3",
+        "Tiếng Hàn Sơ Cấp 1",
+        "Tiếng Hàn Sơ Cấp 2",
+        "Khóa nghề nhà hàng",
+        "Khóa nghề điều dưỡng",
+        "Khóa nghề thực phẩm",
+        "Khóa nghề khách sạn",
+        "Khóa học xây dựng",
+        "Khóa nghề Nông nghiệp trồng trọt"
+    ],
 ];
