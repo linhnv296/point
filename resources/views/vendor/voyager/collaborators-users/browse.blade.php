@@ -303,7 +303,7 @@
 {{--                                                @endforeach--}}
 {{--                                            @endif--}}
                                             @if($data->level == 0 || $data->level > 3 || !$data->level)
-                                                <span class="btn btn-primary">Xác thực tài khoản</span>
+                                                <a href="{{ route('collaborators.verify',['id'=> $data->id]) }}" class="btn btn-primary">Xác thực tài khoản</a>
                                             @elseif($data->level == 1)
                                                 @foreach($actions as $action)
                                                     @if (!method_exists($action, 'massAction'))

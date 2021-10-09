@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+
 use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\UserRequest;
 use App\Models\Point;
@@ -64,6 +65,7 @@ class RegisterController extends Controller
             'course' => $data['course'],
             'date_of_birth' => $data['date_of_birth'],
             'facebook' => $data['facebook'],
+            'fullname' => $data['fullname'],
             'password' => Hash::make($data['password']),
         ]);
     }

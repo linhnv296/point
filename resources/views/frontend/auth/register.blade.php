@@ -28,7 +28,15 @@
 
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Tài khoản<span
+                                    class="requied padding-5">*</span></label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Tài khoản" value="{{ old('name')}}">
+                            @error('name')
+                            <small class="form-text text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <div class="form-group col-md-6">
                             <label for="email">Email <span class="requied padding-5">*</span></label>
                             <input type="email" class="form-control" name="email" id="email" value="{{ old('email')}}">
                             @error('email')
@@ -70,8 +78,8 @@
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Họ Tên <span
                                     class="requied padding-5">*</span></label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Họ Tên">
-                            @error('name')
+                            <input type="text" class="form-control" id="name" name="fullname" placeholder="Họ Tên" value="{{ old('fullname')}}">
+                            @error('fullname')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>

@@ -7,6 +7,11 @@
     <title>Point CRM.</title>
     <meta name="description" content="Point CRM."/>
     <link href="../css/main.css" rel="stylesheet">
+    <!--Google font-->
+    <link href="https://fonts.googleapis.com/css?family=K2D:300,400,500,700,800" rel="stylesheet">
+    <!-- Bootstrap CSS / Color Scheme -->
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <!--Header Section-->
     <link href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.bootstrap4.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">

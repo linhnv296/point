@@ -21,28 +21,20 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="/">Trang chủ<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="/">Trang chủ |<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Danh sách coupons</a>
+                                <a class="nav-link" href="#">Danh sách coupons |</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/about">Giới thiệu</a>
+                                <a class="nav-link" href="/about">Giới thiệu |</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/contact">Liên hệ</a>
+                                <a class="nav-link" href="/contact">Liên hệ |</a>
                             </li>
                             @if(auth()->user())
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Quà tặng
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('coupon.list') }}">Danh sách Quà
-                                            tặng</a>
-                                        <div class="dropdown-divider"></div>
-                                    </div>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route("coupon.list") }}">Đã đổi |</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route("list.user") }}">Danh sách Tài khoản</a>

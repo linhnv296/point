@@ -3,9 +3,9 @@
 <link href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.bootstrap4.min.css" rel="stylesheet">
 <link href="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js" rel="stylesheet">
 @section('content')
-    <section class="bg-gradient pt-5 pb-6">
+    <section class="">
         <div class="container">
-            <div class="row mt-8">
+            <div class="row">
                 <div class="col-md-9 mx-auto">
                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                         <thead>

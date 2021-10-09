@@ -29,6 +29,8 @@ Route::post('/create-collaborators', '\App\Http\Controllers\CollaboratorsUserCon
 Route::get('/list-coupon', '\App\Http\Controllers\CouponController@showPage')->middleware('auth')->name('coupon.list');
 Route::post('/choose-coupon', '\App\Http\Controllers\CouponController@chooseCoupon')->middleware('auth')->name('coupon.choose');
 Route::post('/update-ctv', '\App\Http\Controllers\CollaboratorsUserController@updateCtv')->middleware('auth')->name('collaborators.update-ctv');
+Route::get('/collaborators-users/{id}/verification', '\App\Http\Controllers\CollaboratorsUserController@verificationAccount')->middleware('auth')->name('collaborators.verify');
+Route::post('/collaborators-users/{id}/verification', '\App\Http\Controllers\CollaboratorsUserController@storeVerificationAccount')->middleware('auth')->name('collaborators.storeVerify');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

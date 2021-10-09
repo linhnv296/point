@@ -1,10 +1,5 @@
 @extends('master')
 @section('content')
-    <!--Google font-->
-    <link href="https://fonts.googleapis.com/css?family=K2D:300,400,500,700,800" rel="stylesheet">
-    <!-- Bootstrap CSS / Color Scheme -->
-    <link rel="stylesheet" href="../../css/bootstrap.css">
-    <!--Header Section-->
     <section class="bg pt-2 pb-2">
         <div class="container">
             <div class="row">
