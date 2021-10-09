@@ -13,7 +13,12 @@ class ListUserController extends VoyagerBaseController
     {
         $user = Auth::user();
         $point = $user->point;
-        $arrayLevel = [1 => 'a', 2 => 'b', 3 => 'c', 4 => 'd'];
+        $arrayLevel = [
+            0 => "Chưa xác thực",
+            1 => 'Đã xác thực',
+            2 => 'Tài khoản du học',
+            3 => 'Tài khoản XKLD',
+            4 => 'Cộng tác viên'];
         $listCollaborators = CollaboratorsUser::query()->where('user_id', $user->id)->get();
         return view('list-user', compact('point', 'listCollaborators', 'arrayLevel'));
     }

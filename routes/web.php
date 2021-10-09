@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/', '\App\Http\Controllers\HomeController@index')->name('home.page');
+Route::get('/home', '\App\Http\Controllers\HomeController@index')->name('home.page');
 // Route login logout
 Route::get('/login', '\App\Http\Controllers\Auth\AuthController@showLoginForm')->middleware('guest')->name('auth.login');
 Route::post('/login', '\App\Http\Controllers\Auth\AuthController@login')->middleware('guest')->name('auth.login');
@@ -26,6 +28,7 @@ Route::get('/list-user', '\App\Http\Controllers\ListUserController@showPage')->m
 Route::post('/create-collaborators', '\App\Http\Controllers\CollaboratorsUserController@store')->middleware('auth')->name('collaborators.store');
 Route::get('/list-coupon', '\App\Http\Controllers\CouponController@showPage')->middleware('auth')->name('coupon.list');
 Route::post('/choose-coupon', '\App\Http\Controllers\CouponController@chooseCoupon')->middleware('auth')->name('coupon.choose');
+Route::post('/update-ctv', '\App\Http\Controllers\CollaboratorsUserController@updateCtv')->middleware('auth')->name('collaborators.update-ctv');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

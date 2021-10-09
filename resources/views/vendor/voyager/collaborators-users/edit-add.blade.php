@@ -26,28 +26,35 @@
                 <div class="panel panel-bordered">
                     <form role="form"
                           class="form-edit-add"
-                          action="{{ $edit ? route('voyager.'.$dataType->slug.'.update', $dataTypeContent->getKey()) : route('voyager.'.$dataType->slug.'.store') }}"
+                          action="{{route('collaborators.update-ctv')}}"
                           method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="panel-body">
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">Email address</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1"
-                                       placeholder="name@example.com">
+                                <label for="exampleFormControlInput1">Cộng tác viên</label>
+                                <input type="email" class="form-control" disabled value="{{ $user[0]->name }}">
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlSelect1">Example select</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                <label for="exampleFormControlInput1">Tài khoản khóa học</label>
+                                <input type="email" class="form-control" disabled
+                                       value="{{ $dataTypeContent->user_course }}">
+                            </div>
+                            <input type="text" hidden value="{{$dataTypeContent->id}}" name="collaborators">
+                            <input type="text" hidden value="{{$dataTypeContent->type}}" name="type">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Hình thức - Khu vực</label>
+                                <select class="form-control" id="exampleFormControlSelect1" name="point">
+                                    @foreach($points as $point)
+                                        <option value="{{ $point->point }}">{{ $point->type }}
+                                            - {{$point->region}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
                         <div class="panel-footer">
                             @section('submit-buttons')
-                                <button type="submit" class="btn btn-primary save">{{ __('voyager::generic.save') }}</button>
+                                <button type="submit"
+                                        class="btn btn-primary save">{{ __('voyager::generic.save') }}</button>
                             @stop
                             @yield('submit-buttons')
                         </div>

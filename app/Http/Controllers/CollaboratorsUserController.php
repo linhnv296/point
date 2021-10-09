@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\CollaboratorsUser;
+use App\Models\Point;
+use App\User;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,7 +24,7 @@ class CollaboratorsUserController extends VoyagerBaseController
         CollaboratorsUser::create([
             'user_id' => Auth::user()->id,
             'user_course' => $request->get('user_course'),
-            'level' => 1
+            'level' => 0
         ]);
         return redirect()->back();
     }
@@ -72,7 +74,33 @@ class CollaboratorsUserController extends VoyagerBaseController
         if (view()->exists("voyager::$slug.edit-add")) {
             $view = "voyager::$slug.edit-add";
         }
+        if ($dataTypeContent->level == 0) {
+            $view = "voyager::$slug.verification";
+        }
+        $points = Point::query()->get();
+        $user = User::query()->where("id", $dataTypeContent->user_id)->get();
 
-        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable'));
+        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable', 'points', 'user'));
+    }
+    public function updateCtv (Request $request) {
+        $collaborators = $request->input("collaborators");
+        $point = $request->input("point");
+        $type = $request->input("type");
+        $level = $type == "Du học sinh" ? 3 : 2;
+        $ctv = CollaboratorsUser::query()->where('id', $collaborators)
+            ->update(['level' => $level]);
+
+        return view('collaborators-users');
+    }
+
+    public function verificationAccount (Request $request) {
+        $collaborators = $request->input("collaborators");
+        $point = $request->input("point");
+        $type = $request->input("type");
+        $level = $type == "Du học sinh" ? 3 : 2;
+        $ctv = CollaboratorsUser::query()->where('id', $collaborators)
+            ->update(['level' => $level]);
+
+        return view('collaborators-users');
     }
 }
