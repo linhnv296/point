@@ -204,7 +204,7 @@
                                                         @elseif($data->{$row->field} == 3)
                                                             <div>Xuất khẩu lao động</div>
                                                         @else
-                                                            <div>Tài chưa xác thực</div>
+                                                            <div>Tài khoản chưa xác thực</div>
                                                         @endif
                                                     @elseif($row->field == "is_collaborator")
                                                         @if($data->{$row->field} == 1)

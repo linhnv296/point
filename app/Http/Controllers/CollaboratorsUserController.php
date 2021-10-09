@@ -142,7 +142,7 @@ class CollaboratorsUserController extends VoyagerBaseController
     }
 
     public function export (){
-        return Excel::download(new TestExport, 'users.xlsx');
+        return Excel::download(new TestExport, now().'_Cong_tac_vien.xlsx');
 
     }
 }

@@ -12,6 +12,7 @@
         "fideloper/proxy": "^4.4",
         "laravel/framework": "^6.20.26",
         "laravel/tinker": "^2.5",
+        "maatwebsite/excel": "^3.1",
         "orangehill/iseed": "^3.0",
         "pvtl/voyager-pages": "^0.2.13",
         "tcg/voyager": "^1.5"
