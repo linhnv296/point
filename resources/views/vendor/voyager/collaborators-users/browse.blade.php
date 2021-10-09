@@ -34,7 +34,7 @@
                 @include('voyager::bread.partials.actions', ['action' => $action, 'data' => null])
             @endif
         @endforeach
-        <a href="{{ route('voyager.'.$dataType->slug.'.create') }}" class="btn btn-success btn-add-new">
+        <a href="{{ route('ctv-export') }}" target="_blank" class="btn btn-success btn-add-new">
             <i class="voyager-file-text"></i> <span>Xuất Excel</span>
         </a>
         @include('voyager::multilingual.language-selector')

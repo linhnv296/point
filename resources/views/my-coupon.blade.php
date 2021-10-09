@@ -61,17 +61,6 @@
                             <div class="point">
                                 {{ $value->point }} điểm
                             </div>
-                            @if(auth()->user())
-                                @if(!in_array($value->id, $arrayUserCoupons))
-                                    <form class="form-inline" method="POST" enctype="multipart/form-data"
-                                          action="{{ route('coupon.choose') }}">
-                                        @csrf
-                                        <input class="form-control" value="{{$value->id}}" id="coupon" name="coupon"
-                                               hidden>
-                                        <button type="submit" class="btn btn-primary mb-2">Đổi</button>
-                                    </form>
-                                @endif
-                            @endif
                         </div>
                     </div>
                 @endforeach

@@ -34,7 +34,7 @@
                             </li>
                             @if(auth()->user())
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route("coupon.list") }}">Đã đổi |</a>
+                                    <a class="nav-link" href="{{ route("coupon.my") }}">Đã đổi |</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route("list.user") }}">Danh sách Tài khoản</a>

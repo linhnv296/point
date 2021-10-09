@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\TestExport;
 use App\Models\CollaboratorsUser;
 use App\Models\Point;
 use App\User;
@@ -9,6 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Http\Controllers\VoyagerBaseController;
 
@@ -137,5 +139,10 @@ class CollaboratorsUserController extends VoyagerBaseController
                 ->update(['point' => $user->point + setting('admin.point_register')]);
         }
         return redirect()->route('voyager.collaborators-users.index');
+    }
+
+    public function export (){
+        return Excel::download(new TestExport, 'users.xlsx');
+
     }
 }
