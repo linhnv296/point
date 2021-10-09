@@ -1,6 +1,6 @@
 @extends('master')
 @section('content')
-    <section class="bg pt-2 pb-2">
+    <section class="bg pt-2 pb-4">
         <div class="container">
             <div class="row">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -42,9 +42,9 @@
         </div>
     </section>
     @if(!auth()->user())
-        <section class="bg-gradient pt-5 pb-6">
+        <section class="bg-gradient pt-3 pb-3">
             <div class="container">
-                <div class="row mt-6">
+                <div class="row mt-3">
                     <div class="col-md-8 mx-auto text-center">
                         <h1>What is Lorem Ipsum?</h1>
                         <p class="lead mb-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry.

@@ -24,7 +24,7 @@
                                 <a class="nav-link" href="/">Trang chủ |<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Danh sách coupons |</a>
+                                <a class="nav-link" href={{ route('coupon.list') }}>Danh sách coupons |</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/about">Giới thiệu |</a>
