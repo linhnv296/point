@@ -4,9 +4,12 @@
             <div class="col-12 d-flex flex-row align-items-center justify-content-between">
                 <div class="heading-brand">Point CRM</div>
                 @if(auth()->user())
-                    <a href="{{route("auth.logout")}}" class="btn btn-dark">Logout</a>
+                    <div>
+                    <a href="{{route("auth.logout")}}" class="btn btn-warning">Đăng xuất</a>
+                    <a href="{{route("auth.change")}}" class="btn btn-primary">Đổi mật khẩu</a>
+                    </div>
                 @else
-                    <a href="{{route("auth.login")}}" class="btn btn-dark">Login</a>
+                    <a href="{{route("auth.login")}}" class="btn btn-primary">Đăng nhập</a>
                 @endif
             </div>
             <div class="col-12">
@@ -21,20 +24,20 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="/">Trang chủ |<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="/">Trang chủ <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href={{ route('coupon.list') }}>Danh sách coupons |</a>
+                                <a class="nav-link" href={{ route('coupon.list') }}>Danh sách coupons </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/about">Giới thiệu |</a>
+                                <a class="nav-link" href="/about">Giới thiệu </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/contact">Liên hệ |</a>
+                                <a class="nav-link" href="/contact">Liên hệ </a>
                             </li>
                             @if(auth()->user())
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route("coupon.my") }}">Đã đổi |</a>
+                                    <a class="nav-link" href="{{ route("coupon.my") }}">Đã đổi </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route("list.user") }}">Danh sách Tài khoản</a>

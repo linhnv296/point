@@ -20,6 +20,8 @@ Route::get('/', '\App\Http\Controllers\HomeController@index')->name('home.page')
 Route::get('/home', '\App\Http\Controllers\HomeController@index')->name('home.page');
 // Route login logout
 Route::get('/login', '\App\Http\Controllers\Auth\AuthController@showLoginForm')->middleware('guest')->name('auth.login');
+Route::get('/change-password', '\App\Http\Controllers\Auth\AuthController@showChangeForm')->middleware('auth')->name('auth.change');
+Route::post('/change-password', '\App\Http\Controllers\Auth\AuthController@changePass')->middleware('auth')->name('auth.change');
 Route::post('/login', '\App\Http\Controllers\Auth\AuthController@login')->middleware('guest')->name('auth.login');
 Route::get('/register', '\App\Http\Controllers\Auth\AuthController@showRegisterForm')->middleware('guest')->name('auth.register');
 Route::post('/register', '\App\Http\Controllers\Auth\RegisterController@insert')->name('auth.create');
