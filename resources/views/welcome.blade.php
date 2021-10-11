@@ -222,20 +222,20 @@
                     <div class="col-md-5 course-wrap">
                         <div class="col-md-12 pt-2 pb-5">
                             <div class="image">
-                                <img class="w-100" src="{{url('/images/hoc-spa-online.jpg')}}" alt="">
+                                <img class="w-100" src="{{url('/images/hoc-thac-sy-tai-duc.jpg')}}" alt="">
                             </div>
                         </div>
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-6 pt-2">
                                     <div class="image image-small">
-                                        <img class="" src="{{url('/images/shutterstock.jpg')}}" alt="">
+                                        <img class="" src="{{url('/images/dsc4.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-6 pt-2">
                                     <div class="image image-small">
                                         <img class=""
-                                             src="{{url('/images/two-mechanical-engineers-working-together.jpg')}}"
+                                             src="{{url('/images/ffhfg.jpg')}}"
                                              alt="">
                                     </div>
                                 </div>
