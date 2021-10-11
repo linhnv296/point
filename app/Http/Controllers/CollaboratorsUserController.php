@@ -91,7 +91,9 @@ class CollaboratorsUserController extends VoyagerBaseController
         }
         $points = Point::query()->get();
         $user = User::query()->where("id", $dataTypeContent->user_id)->get();
-
+        if(count($user) == 0){
+            return redirect()->back();
+        }
         return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable', 'points', 'user'));
     }
 
@@ -122,7 +124,9 @@ class CollaboratorsUserController extends VoyagerBaseController
             return redirect()->route('voyager.collaborators-users.index');
         }
         $user = User::query()->where("id", $collaboratorsUser->user_id)->get()->first();
-
+        if (!$user){
+            return redirect()->back();
+        }
         $view = 'vendor.voyager.collaborators-users.verification';
         return view($view, compact('collaboratorsUser', 'user'));
     }

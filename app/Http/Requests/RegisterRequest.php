@@ -29,8 +29,10 @@ class RegisterRequest extends FormRequest
             'password' => 'required|min:6|max:50',
             'password_confirm' => 'required|min:6|max:50',
             'date_of_birth' => 'required',
-            'phone' => 'required|min:10|max:10',
+            'phone' => 'required|min:10',
             'province' => 'required|max:250',
+            'facebook' => 'required',
+            'job' => 'required',
         ];
     }
 
@@ -49,7 +51,8 @@ class RegisterRequest extends FormRequest
             'password_confirm.same' => __('Mật khẩu nhập lại không giống Mật khẩu'),
             'date_of_birth.required' => __('Ngày sinh không được để trống'),
             'phone.required' => __('Số điện thoại không được để trống'),
-            'province.required' => __('Địa chỉ không được để trống'),
+            'facebook.required' => __('Facebook không được để trống'),
+            'job.required' => __('Nghề nghiệp không được để trống'),
             ];
     }
 }
