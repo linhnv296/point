@@ -6,6 +6,7 @@ use App\Models\Coupon;
 use App\Models\UserCoupon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use TCG\Voyager\Http\Controllers\VoyagerBaseController;
 
 class HomeController extends VoyagerBaseController
@@ -15,6 +16,7 @@ class HomeController extends VoyagerBaseController
         $listCoupon = Coupon::query()
             ->whereDate('day_start', '<=', date("Y-m-d"))
             ->whereDate('day_finish', '>=', date("Y-m-d"))->get();
-        return view('welcome', compact( 'listCoupon'));
+        $pageIntro = DB::table('pages')->whereIn('slug', ['khoa-hoc', 'chuong-trinh-gioi-thieu'])->get();
+        return view('welcome', compact( 'listCoupon', 'pageIntro'));
     }
 }

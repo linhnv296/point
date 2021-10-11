@@ -32,10 +32,10 @@ class DataTypesTableSeeder extends Seeder
                 'controller' => 'TCG\\Voyager\\Http\\Controllers\\VoyagerUserController',
                 'description' => NULL,
                 'generate_permissions' => 1,
-                'server_side' => 1,
+                'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"desc","default_search_key":null,"scope":null}',
                 'created_at' => '2021-09-26 12:35:50',
-                'updated_at' => '2021-10-07 15:44:32',
+                'updated_at' => '2021-10-10 01:21:32',
             ),
             1 => 
             array (
@@ -126,6 +126,24 @@ class DataTypesTableSeeder extends Seeder
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2021-10-07 07:04:44',
                 'updated_at' => '2021-10-07 15:30:03',
+            ),
+            6 => 
+            array (
+                'id' => 11,
+                'name' => 'pages',
+                'slug' => 'pages',
+                'display_name_singular' => 'Page',
+                'display_name_plural' => 'Pages',
+                'icon' => 'voyager-file-text',
+                'model_name' => 'Pvtl\\VoyagerPages\\Page',
+                'policy_name' => NULL,
+                'controller' => '\\Pvtl\\VoyagerPages\\Http\\Controllers\\PageController',
+                'description' => '',
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => NULL,
+                'created_at' => '2021-10-08 04:37:04',
+                'updated_at' => '2021-10-08 04:37:04',
             ),
         ));
         
