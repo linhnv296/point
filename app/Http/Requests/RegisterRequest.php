@@ -33,6 +33,7 @@ class RegisterRequest extends FormRequest
             'province' => 'required|max:250',
             'facebook' => 'required',
             'job' => 'required',
+            'cmnd' => 'required',
         ];
     }
 
@@ -53,6 +54,7 @@ class RegisterRequest extends FormRequest
             'phone.required' => __('Số điện thoại không được để trống'),
             'facebook.required' => __('Facebook không được để trống'),
             'job.required' => __('Nghề nghiệp không được để trống'),
+            'cmnd.required' => __('CMND/Căn cước công dân không được để trống   '),
             ];
     }
 }

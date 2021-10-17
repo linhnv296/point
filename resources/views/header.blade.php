@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 d-flex flex-row align-items-center justify-content-between">
-                <div class="heading-brand">Point CRM</div>
+                <div class="heading-brand">Đại sứ kết nối - THANH GIANG</div>
                 @if(auth()->user())
                     <div>
                     <a href="{{route("auth.logout")}}" class="btn btn-warning">Đăng xuất</a>
@@ -27,7 +27,7 @@
                                 <a class="nav-link" href="/">Trang chủ <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href={{ route('coupon.list') }}>Danh sách coupons </a>
+                                <a class="nav-link" href={{ route('coupon.list') }}>Ưu đãi </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/about">Giới thiệu </a>
@@ -40,7 +40,13 @@
                                     <a class="nav-link" href="{{ route("coupon.my") }}">Đã đổi </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route("list.user") }}">Danh sách Tài khoản</a>
+                                    <a class="nav-link" href="{{ route("list.user") }}">Danh sách</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route("list.user") }}">Tặng point</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route("list.user") }}">Nâng cấp</a>
                                 </li>
                             @endif
                         </ul>

@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Point CRM.</title>
+    <title>{{ setting('site.title') }}</title>
     <meta name="description" content="Point CRM."/>
     <link href="../css/main.css" rel="stylesheet">
     <!--Google font-->

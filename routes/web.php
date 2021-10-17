@@ -37,4 +37,5 @@ Route::post('/collaborators-users/{id}/verification', '\App\Http\Controllers\Col
 Route::get('ctv-export', 'CollaboratorsUserController@export')->name('ctv-export');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+    Route::get('/nang_cap', '\App\Http\Controllers\Auth\AuthController@upgradeAccount')->middleware('auth')->name('auth.upgrade.account');
 });

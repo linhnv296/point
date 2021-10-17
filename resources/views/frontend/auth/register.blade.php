@@ -21,8 +21,9 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-10 login_content">
-                <H2 class="text-center">Đăng ký tài khoản</H2>
-                <form method="post" action="{{ route('auth.create') }}">
+                <H2 class="text-center">Đăng ký tài khoản cộng tác viên mới</H2>
+                <H2 class="text-center">Mời bạn nhập đầy đủ chính xác thông tin để nhận điểm point</H2>
+                <form method="post" action="{{ route('auth.create') }}" autocomplete="off">
                     @csrf
                     <div class="form-row">
 
@@ -37,7 +38,7 @@
                             @enderror
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="email">Email <span class="requied padding-5">*</span></label>
+                            <label for="email">Email <span class="requied padding-5">* điền chính xác thông tin để kích hoạt tài khoản</span></label>
                             <input type="email" class="form-control" name="email" id="email" value="{{ old('email')}}" placeholder="abc@gmail.com">
                             @error('email')
                             <small class="form-text text-danger">{{ $message }}</small>
@@ -67,8 +68,8 @@
                             @enderror
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="email_user">Tài khoản người giới thiệu</label>
-                            <input type="text" class="form-control" id="email_user" name="email_user" value="{{ old('email_user')}}" placeholder="taikhoannguoigioithieu">
+                            <label for="email_user">Mã giới thiệu <span class="text-danger">(Số điện thoại người giới thiệu)</span></label>
+                            <input type="text" class="form-control" id="email_user" name="email_user" value="{{ old('email_user')}}" placeholder="+840960000000">
                             @error('email_user')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
@@ -95,7 +96,7 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-md-6 date">
+                        <div class="form-group col-md-3 date">
                             <label for="date_of_birth">Ngày Sinh <span class="requied padding-5">*</span></label>
                             <input class="form-control" id="date_of_birth" name="date_of_birth" value="{{ old('date_of_birth')}}" placeholder="01/01/2001">
                             <span class="input-group-addon">
@@ -105,9 +106,19 @@
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
+                        <div class="form-group col-md-3 date">
+                            <label for="cmnd">CMND/CCCD <span class="requied padding-5">*</span></label>
+                            <input class="form-control" id="cmnd" name="cmnd" value="{{ old('cmnd')}}" placeholder="001091000000">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                           </span>
+                            @error('cmnd')
+                            <small class="form-text text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
                         <div class="form-group col-md-6">
                             <label for="phone">Số Điện Thoại <span class="requied padding-5">*</span></label>
-                            <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone')}}" placeholder="+84 09xxxxxxxx">
+                            <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone')}}" placeholder="+840960000000">
                             @error('phone')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror

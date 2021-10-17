@@ -77,13 +77,15 @@
             <div class="container">
                 <div class="row mt-3">
                     <div class="col-md-8 mx-auto text-center">
-                        <h1>What is Lorem Ipsum?</h1>
-                        <p class="lead mb-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                            unknown printer took a galley of type and scrambled it to make a type specimen book..</p>
+                        <h1>Đăng ký thành viên</h1>
+                        <p class="lead mb-5">
+                            @if(isset($pageIntro["page-register"]) && $pageIntro["page-register"])
+                                {!! ($pageIntro["page-register"]) !!}
+                            @endif
+                        </p>
                         <a href="{{route("auth.register")}}" class="btn btn-success svg-icon">
                             <em class="mr-2" data-feather="github"></em>
-                            Register
+                            Đăng ký
                         </a>
                     </div>
                 </div>
@@ -91,90 +93,6 @@
         </section>
     @endif
     <!--Features Section-->
-    {{--    <section class="py-6">--}}
-    {{--        <div class="container">--}}
-    {{--            <div class="row">--}}
-    {{--                <div class="col-md-8 mx-auto">--}}
-    {{--                    <h2 class="text-center text-md-left">Lorem Ipsum is simply dummy <span class="text-success">Point.CRM</span>--}}
-    {{--                    </h2>--}}
-    {{--                    <div class="row feature-grid">--}}
-    {{--                        <div class="col-sm-6">--}}
-    {{--                            <div class="media">--}}
-    {{--                                <div class="icon-box">--}}
-    {{--                                    <div class="icon-box-inner">--}}
-    {{--                                        <span data-feather="check-circle" width="28" height="28"></span>--}}
-    {{--                                    </div>--}}
-    {{--                                </div>--}}
-    {{--                                <div class="media-body">--}}
-    {{--                                    Dead Simple--}}
-    {{--                                </div>--}}
-    {{--                            </div>--}}
-    {{--                        </div>--}}
-    {{--                        <div class="col-sm-6">--}}
-    {{--                            <div class="media">--}}
-    {{--                                <div class="icon-box">--}}
-    {{--                                    <div class="icon-box-inner">--}}
-    {{--                                        <span data-feather="command" width="28" height="28"></span>--}}
-    {{--                                    </div>--}}
-    {{--                                </div>--}}
-    {{--                                <div class="media-body">--}}
-    {{--                                    Highly Intuitive--}}
-    {{--                                </div>--}}
-    {{--                            </div>--}}
-    {{--                        </div>--}}
-    {{--                        <div class="col-sm-6">--}}
-    {{--                            <div class="media">--}}
-    {{--                                <div class="icon-box">--}}
-    {{--                                    <div class="icon-box-inner">--}}
-    {{--                                        <span data-feather="feather" width="28" height="28"></span>--}}
-    {{--                                    </div>--}}
-    {{--                                </div>--}}
-    {{--                                <div class="media-body">--}}
-    {{--                                    Light as a Feather--}}
-    {{--                                </div>--}}
-    {{--                            </div>--}}
-    {{--                        </div>--}}
-    {{--                        <div class="col-sm-6">--}}
-    {{--                            <div class="media">--}}
-    {{--                                <div class="icon-box">--}}
-    {{--                                    <div class="icon-box-inner">--}}
-    {{--                                        <span data-feather="zap" width="28" height="28"></span>--}}
-    {{--                                    </div>--}}
-    {{--                                </div>--}}
-    {{--                                <div class="media-body">--}}
-    {{--                                    Blazing Fast--}}
-    {{--                                </div>--}}
-    {{--                            </div>--}}
-    {{--                        </div>--}}
-    {{--                        <div class="col-sm-6">--}}
-    {{--                            <div class="media">--}}
-    {{--                                <div class="icon-box">--}}
-    {{--                                    <div class="icon-box-inner">--}}
-    {{--                                        <span data-feather="git-pull-request" width="28" height="28"></span>--}}
-    {{--                                    </div>--}}
-    {{--                                </div>--}}
-    {{--                                <div class="media-body">--}}
-    {{--                                    Extensible--}}
-    {{--                                </div>--}}
-    {{--                            </div>--}}
-    {{--                        </div>--}}
-    {{--                        <div class="col-sm-6">--}}
-    {{--                            <div class="media">--}}
-    {{--                                <div class="icon-box">--}}
-    {{--                                    <div class="icon-box-inner">--}}
-    {{--                                        <span data-feather="droplet" width="28" height="28"></span>--}}
-    {{--                                    </div>--}}
-    {{--                                </div>--}}
-    {{--                                <div class="media-body">--}}
-    {{--                                    Easy Styling--}}
-    {{--                                </div>--}}
-    {{--                            </div>--}}
-    {{--                        </div>--}}
-    {{--                    </div>--}}
-    {{--                </div>--}}
-    {{--            </div>--}}
-    {{--        </div>--}}
-    {{--    </section>--}}
 
     <!--Used By Section-->
     @if($pageIntro)
@@ -182,7 +100,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8">
-                        @if($pageIntro["khoa-hoc"])
+                        @if(isset($pageIntro["khoa-hoc"]) && $pageIntro["khoa-hoc"])
                             {!! ($pageIntro["khoa-hoc"]) !!}
                         @endif
                     </div>
@@ -243,7 +161,7 @@
                         </div>
                     </div>
                     <div class="col-md-7">
-                        @if($pageIntro["chuong-trinh-gioi-thieu"])
+                        @if(isset($pageIntro["chuong-trinh-gioi-thieu"]) && $pageIntro["chuong-trinh-gioi-thieu"])
                             {!! ($pageIntro["chuong-trinh-gioi-thieu"]) !!}
                         @endif
                     </div>

@@ -66,8 +66,9 @@ class RegisterController extends Controller
             'date_of_birth' => $data['date_of_birth'],
             'facebook' => $data['facebook'],
             'fullname' => $data['fullname'],
-            'target' => $data['target'],
+            'target' => $data['edu_target'],
             'password' => Hash::make($data['password']),
+            'cmnd' => $data['cmnd'],
         ]);
     }
 

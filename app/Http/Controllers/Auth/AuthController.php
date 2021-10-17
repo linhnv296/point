@@ -87,4 +87,8 @@ class AuthController extends Controller
 
         return redirect('/');
     }
+    public function upgradeAccount (Request $request){
+        $users = User::query()->where('active_ctv', "=", 1)->get();
+        dd($users);
+    }
 }
