@@ -339,6 +339,86 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-10-07 07:04:44',
                 'updated_at' => '2021-10-07 07:04:44',
             ),
+            40 => 
+            array (
+                'id' => 41,
+                'key' => 'browse_pages',
+                'table_name' => NULL,
+                'created_at' => '2021-10-08 04:37:05',
+                'updated_at' => '2021-10-08 04:37:05',
+            ),
+            41 => 
+            array (
+                'id' => 42,
+                'key' => 'read_pages',
+                'table_name' => NULL,
+                'created_at' => '2021-10-08 04:37:05',
+                'updated_at' => '2021-10-08 04:37:05',
+            ),
+            42 => 
+            array (
+                'id' => 43,
+                'key' => 'edit_pages',
+                'table_name' => NULL,
+                'created_at' => '2021-10-08 04:37:05',
+                'updated_at' => '2021-10-08 04:37:05',
+            ),
+            43 => 
+            array (
+                'id' => 44,
+                'key' => 'add_pages',
+                'table_name' => NULL,
+                'created_at' => '2021-10-08 04:37:05',
+                'updated_at' => '2021-10-08 04:37:05',
+            ),
+            44 => 
+            array (
+                'id' => 45,
+                'key' => 'delete_pages',
+                'table_name' => NULL,
+                'created_at' => '2021-10-08 04:37:05',
+                'updated_at' => '2021-10-08 04:37:05',
+            ),
+            45 => 
+            array (
+                'id' => 46,
+                'key' => 'browse_pages',
+                'table_name' => 'pages',
+                'created_at' => '2021-10-08 04:37:05',
+                'updated_at' => '2021-10-08 04:37:05',
+            ),
+            46 => 
+            array (
+                'id' => 47,
+                'key' => 'read_pages',
+                'table_name' => 'pages',
+                'created_at' => '2021-10-08 04:37:05',
+                'updated_at' => '2021-10-08 04:37:05',
+            ),
+            47 => 
+            array (
+                'id' => 48,
+                'key' => 'edit_pages',
+                'table_name' => 'pages',
+                'created_at' => '2021-10-08 04:37:05',
+                'updated_at' => '2021-10-08 04:37:05',
+            ),
+            48 => 
+            array (
+                'id' => 49,
+                'key' => 'add_pages',
+                'table_name' => 'pages',
+                'created_at' => '2021-10-08 04:37:05',
+                'updated_at' => '2021-10-08 04:37:05',
+            ),
+            49 => 
+            array (
+                'id' => 50,
+                'key' => 'delete_pages',
+                'table_name' => 'pages',
+                'created_at' => '2021-10-08 04:37:05',
+                'updated_at' => '2021-10-08 04:37:05',
+            ),
         ));
         
         

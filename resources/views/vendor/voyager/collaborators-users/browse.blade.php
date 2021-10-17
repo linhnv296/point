@@ -34,7 +34,7 @@
                 @include('voyager::bread.partials.actions', ['action' => $action, 'data' => null])
             @endif
         @endforeach
-        <a href="{{ route('voyager.'.$dataType->slug.'.create') }}" class="btn btn-success btn-add-new">
+        <a href="{{ route('ctv-export') }}" target="_blank" class="btn btn-success btn-add-new">
             <i class="voyager-file-text"></i> <span>Xuất Excel</span>
         </a>
         @include('voyager::multilingual.language-selector')
@@ -204,7 +204,7 @@
                                                         @elseif($data->{$row->field} == 3)
                                                             <div>Xuất khẩu lao động</div>
                                                         @else
-                                                            <div>Tài chưa xác thực</div>
+                                                            <div>Tài khoản chưa xác thực</div>
                                                         @endif
                                                     @elseif($row->field == "is_collaborator")
                                                         @if($data->{$row->field} == 1)
@@ -303,7 +303,7 @@
 {{--                                                @endforeach--}}
 {{--                                            @endif--}}
                                             @if($data->level == 0 || $data->level > 3 || !$data->level)
-                                                <span class="btn btn-primary">Xác thực tài khoản</span>
+                                                <a href="{{ route('collaborators.verify',['id'=> $data->id]) }}" class="btn btn-primary">Xác thực tài khoản</a>
                                             @elseif($data->level == 1)
                                                 @foreach($actions as $action)
                                                     @if (!method_exists($action, 'massAction'))

@@ -4,9 +4,8 @@
         <div class="row">
             <div class="col-12 text-center">
                 <ul class="list-inline">
-                    <li class="list-inline-item"><a href="">Help</a></li>
-                    <li class="list-inline-item"><a href="">Document</a></li>
-                    <li class="list-inline-item"><a href="">About Us</a></li>
+                    <li class="list-inline-item"><a href="user_guide">Tài liệu tham khảo</a></li>
+                    <li class="list-inline-item"><a href="/about">About Us</a></li>
                 </ul>
             </div>
         </div>

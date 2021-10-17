@@ -3,12 +3,15 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ChangePassRequest;
 use App\Http\Requests\LoginRequest;
 use App\Models\Point;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -34,6 +37,20 @@ class AuthController extends Controller
     public function showLoginForm()
     {
         return view('frontend/auth/login');
+    }
+    public function showChangeForm()
+    {
+        return view('frontend/auth/change');
+    }
+    public function changePass(ChangePassRequest $request)
+    {
+        $msg = "Đổi mật khẩu không thành công do tài mật khẩu cũ không chính xác";
+        if(Hash::check($request->input('current_password'), auth()->user()->password)){
+            User::find(auth()->user()->id)->update(['password'=> Hash::make($request->input('password'))]);
+            $meg = "Đổi mật khẩu thành công";
+            return redirect()->route('home.page');
+        }
+        return redirect()->back()->withErrors(['message' => $msg]);
     }
 
     public function login(LoginRequest $request)
@@ -69,5 +86,9 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/');
+    }
+    public function upgradeAccount (Request $request){
+        $users = User::query()->where('active_ctv', "=", 1)->get();
+        dd($users);
     }
 }

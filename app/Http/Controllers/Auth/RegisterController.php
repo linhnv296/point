@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+
 use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\UserRequest;
 use App\Models\Point;
@@ -64,14 +65,17 @@ class RegisterController extends Controller
             'course' => $data['course'],
             'date_of_birth' => $data['date_of_birth'],
             'facebook' => $data['facebook'],
+            'fullname' => $data['fullname'],
+            'target' => $data['edu_target'],
             'password' => Hash::make($data['password']),
+            'cmnd' => $data['cmnd'],
         ]);
     }
 
     protected function addPoint($data, $user)
     {
         $point = setting('admin.point_register');
-        $dataUserInvite = User::query()->where("email", $data['email_user'])->get();
+        $dataUserInvite = User::query()->where("name", $data['email_user'])->get();
         if (!$dataUserInvite) return;
         $user->point = $point;
         $dataUserInvite[0]->point = $dataUserInvite[0]->point + $point;

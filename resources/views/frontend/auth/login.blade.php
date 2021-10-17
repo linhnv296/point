@@ -18,6 +18,7 @@
             <div class="col-10 col-md-8 col-lg-4 login_content">
                 <form method="POST" enctype="multipart/form-data" action="{{route('auth.login')}}">
                     @csrf
+                    <h2 class="text-center">Đăng nhập</h2>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Tài khoản</label>
                         <input type="text" class="form-control" id="exampleInputEmail1"
