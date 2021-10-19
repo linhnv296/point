@@ -29,7 +29,11 @@ class User extends \TCG\Voyager\Models\User
         'target',
         'point',
         'course',
-        'fullname'
+        'fullname',
+        'verify_email_at',
+        'key_verify',
+        'active_ctv',
+        'cmnd',
     ];
 
     /**

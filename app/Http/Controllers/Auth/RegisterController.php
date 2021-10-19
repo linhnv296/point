@@ -89,7 +89,7 @@ class RegisterController extends Controller
         $data = $request->all();
         if (($data)) {
             $user = $this->create($data);
-            $this->addPoint($data, $user);
+//            $this->addPoint($data, $user);
             session()->flash('success', __('login-logout.register-success'));
             return redirect('/login')->with('message', __('login-logout.register-success'));
         } else {
