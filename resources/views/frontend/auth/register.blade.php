@@ -69,7 +69,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="email_user">Mã giới thiệu <span class="text-danger">(Số điện thoại người giới thiệu)</span></label>
-                            <input type="text" class="form-control" id="email_user" name="email_user" value="{{ old('email_user')}}" placeholder="+840960000000">
+                            <input type="number" class="form-control" id="email_user" name="email_user" value="{{ old('email_user')}}" placeholder="+840960000000">
                             @error('email_user')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
@@ -118,7 +118,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="phone">Số Điện Thoại <span class="requied padding-5">*</span></label>
-                            <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone')}}" placeholder="+840960000000">
+                            <input type="number" class="form-control" id="phone" name="phone" value="{{ old('phone')}}" placeholder="+840960000000">
                             @error('phone')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror

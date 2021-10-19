@@ -69,6 +69,7 @@ class RegisterController extends Controller
             'target' => $data['edu_target'],
             'password' => Hash::make($data['password']),
             'cmnd' => $data['cmnd'],
+            'invite' => $data['invite'],
         ]);
     }
 

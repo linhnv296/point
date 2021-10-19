@@ -42,6 +42,15 @@
                             border-radius: 20px;
                             overflow: hidden;
                         }
+                        .press-icons img {
+                            max-width: 125px;
+                            width: auto;
+                            height: auto;
+                            max-height: 100px;
+                        }
+                        .carousel img, .carousel-inner{
+                            width: 100%;
+                        }
                     </style>
                     <ol class="carousel-indicators">
                         @foreach($listCoupon as $i => $item)
@@ -72,6 +81,12 @@
             </div>
         </div>
     </section>
+
+        <div class="container">
+            <div class="row">
+                {!! setting('site.slide') !!}
+            </div>
+        </div>
     @if(!auth()->user())
         <section class="bg-gradient pt-3 pb-3">
             <div class="container">
@@ -176,10 +191,15 @@
                     <h2 class="text-center text-md-left">Mạng xã hội</h2>
                     <p class="lead text-muted">Kết nối với Point CRM qua mạng xã hội.</p>
                     <div class="mt-5 d-flex flex-row justify-content-md-between flex-wrap press-icons">
-                        <img src="https://logo.clearbit.com/google.com?size=60" alt="Google"/>
-                        <img src="https://logo.clearbit.com/twitter.com?size=60" alt="Twitter"/>
-                        <img src="https://logo.clearbit.com/vuejs.org?size=60" alt="Veu.js"/>
-                        <img src="https://logo.clearbit.com/stripe.com?size=60" alt="Stripe"/>
+                        <a href="{{setting('site.fb')}}">
+                            <img src="{{url('/images/fb.png')}}" alt="facebook"/>
+                        </a>
+                        <a href="{{setting('site.tw')}}">
+                            <img src="{{url('/images/tw.png')}}" alt="Twitter"/>
+                        </a>
+                        <a href="{{setting('site.youtube')}}">
+                            <img src="{{url('/images/youtube.png')}}" alt="Youtube"/>
+                        </a>
                     </div>
                 </div>
             </div>

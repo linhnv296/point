@@ -34,6 +34,7 @@ class User extends \TCG\Voyager\Models\User
         'key_verify',
         'active_ctv',
         'cmnd',
+        'invite',
     ];
 
     /**

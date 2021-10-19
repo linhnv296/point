@@ -5,13 +5,18 @@
                 <div class="heading-brand">Đại sứ kết nối - THANH GIANG</div>
                 @if(auth()->user())
                     <div>
-                        <a href="{{route("auth.logout")}}" class="btn btn-warning">Đăng xuất</a>
-                        <a href="{{route("auth.change")}}" class="btn btn-primary">Đổi mật khẩu</a>
+                        <a href="{{route("auth.logout")}}" class="btn btn-warning mb-1">Đăng xuất</a>
+                        <a href="{{route("auth.change")}}" class="btn btn-primary mb-1">Đổi mật khẩu</a>
                     </div>
                 @else
                     <a href="{{route("auth.login")}}" class="btn btn-primary">Đăng nhập</a>
                 @endif
             </div>
+            @if(auth()->user())
+            <div class="col-12">
+                Tài khoản của bạn: {{ auth()->user()->name }} - Số point: {{ auth()->user()->point }}
+            </div>
+            @endif
             <div class="col-12">
 
                 <nav class="navbar navbar-expand-lg navbar-light">
@@ -43,7 +48,7 @@
                                     <a class="nav-link" href="{{ route("list.user") }}">Danh sách</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route("list.user") }}">Tặng point</a>
+                                    <a class="nav-link" href="{{ route("auth.transfer.point") }}">Tặng point</a>
                                 </li>
                                 @if(auth()->user()->active_ctv < 1)
                                     <li class="nav-item">
