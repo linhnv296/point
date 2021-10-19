@@ -30,7 +30,7 @@
                         </div>
                         <form role="form"
                               class="form-edit-add"
-                              action=""
+                              action="{{ route('auth.upgrade') }}"
                               method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="panel-body">

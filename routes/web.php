@@ -41,4 +41,5 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
     Route::get('/nang_cap', '\App\Http\Controllers\Auth\AuthController@upgradeAccount')->middleware('auth')->name('auth.upgrade.account');
     Route::get('/nang_cap/{id}', '\App\Http\Controllers\Auth\AuthController@upgradeAccountDetail')->middleware('auth')->name('auth.upgrade.detail');
+    Route::post('/nang_cap', '\App\Http\Controllers\Auth\AuthController@upgradeUser')->middleware('auth')->name('auth.upgrade');
 });

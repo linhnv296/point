@@ -108,6 +108,15 @@ class AuthController extends Controller
         $users = User::query()->where('active_ctv', "=", 1)->get();
         return view('vendor/voyager/admin/upgrade/list', compact('users'));
     }
+
+    public function upgradeUser (Request $request){
+        $user = User::find($request->get('userId'));
+        $user->active_ctv = 2;
+        $user->save();
+        $users = User::query()->where('active_ctv', "=", 1)->get();
+        return view('vendor/voyager/admin/upgrade/list', compact('users'));
+    }
+
     public function upgradeAccountDetail (Request $request){
         $id = request('id');
         $user = User::query()->where('id', $id)->first();
