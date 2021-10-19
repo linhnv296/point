@@ -26,20 +26,52 @@ class CollaboratorsUserController extends VoyagerBaseController
     public function store(Request $request)
     {
         $rules = [
-            'user_course' => 'required|unique:collaborators_users|regex:/^[a-zA-Z0-9]+$/',
+//            'user_course' => 'required|unique:collaborators_users|regex:/^[a-zA-Z0-9]+$/',
+            'email' => 'required|email|min:6|max:50|unique:collaborators_users',
+            'name' => 'unique:collaborators_users|required|regex:/^[a-zA-Z0-9]+$/',
+            'date_of_birth' => 'required',
+            'phone' => 'required|min:10',
+            'province' => 'required|max:250',
+            'facebook' => 'required',
+            'job' => 'required',
+            'cmnd' => 'required',
+            'fullname' => 'required',
             ];
 
         $customMessages = [
-            'required' => 'Tài khoản không được để trống',
-            'unique' => "Tài khooản đã tồn tại",
-            'regex' => "Tài khooản Không hợp lệ"
+//            'required' => 'Tài khoản không được để trống',
+//            'unique' => "Tài khooản đã tồn tại",
+//            'regex' => "Tài khooản Không hợp lệ"
+            'email.email' => __('Phải là định dạng email'),
+            'email.required' => __('Email không được để trống'),
+            'email.unique' => __('Email đã tồn tại'),
+            'name.required' => __('Tài khoản không được để trống'),
+            'name.regex' => __('Tài khoản gồm các ký tự 0-9/a-z'),
+            'fullname.required' => __('Tài khoản không được để trống'),
+            'date_of_birth.required' => __('Ngày sinh không được để trống'),
+            'phone.required' => __('Số điện thoại không được để trống'),
+            'facebook.required' => __('Facebook không được để trống'),
+            'job.required' => __('Nghề nghiệp không được để trống'),
+            'cmnd.required' => __('CMND/Căn cước công dân không được để trống   '),
         ];
         $this->validate($request, $rules, $customMessages);
 
         CollaboratorsUser::create([
             'user_id' => Auth::user()->id,
-            'user_course' => $request->get('user_course'),
-            'level' => 0
+            'user_course' => $request->get('name'),
+            'level' => 0,
+            'email' => $request->get('email'),
+            'facebook' => $request->get('facebook'),
+            'fullname' => $request->get('fullname'),
+            'sex' => $request->get('sex'),
+            'date_of_birth' => $request->get('date_of_birth'),
+            'cmnd' => $request->get('cmnd'),
+            'phone' => $request->get('phone'),
+            'job' => $request->get('job'),
+            'course' => $request->get('course'),
+            'province' => $request->get('province'),
+            'education' => $request->get('education'),
+            'target' => $request->get('edu_target'),
         ]);
         return redirect()->back();
     }

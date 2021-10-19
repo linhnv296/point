@@ -15,7 +15,7 @@ class TestExport implements FromView
         return view('exports.users', [
             'users' => $users = DB::table('users as u')
                 ->join('collaborators_users as c', 'u.id', '=', 'c.user_id')
-                ->select('u.name as userName', 'u.point', 'u.email', 'u.facebook', 'u.job', 'u.fullname', 'u.sex','u.date_of_birth', 'u.phone','u.course','u.province', 'u.education', 'u.target','c.user_course', "c.level", 'c.is_collaborator')->orderByDesc('u.name')
+                ->select('u.name as userName', 'u.point', 'c.email', 'c.facebook', 'c.job', 'c.fullname', 'c.sex','c.date_of_birth', 'c.phone','c.course','c.province', 'c.education', 'c.target','c.user_course', "c.level", 'c.is_collaborator')->orderByDesc('u.name')
                 ->get()
         ]);
     }

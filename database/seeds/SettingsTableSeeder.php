@@ -24,7 +24,7 @@ class SettingsTableSeeder extends Seeder
                 'id' => 1,
                 'key' => 'site.title',
                 'display_name' => 'Site Title',
-                'value' => 'Site Title',
+                'value' => 'OK',
                 'details' => '',
                 'type' => 'text',
                 'order' => 1,
@@ -139,6 +139,80 @@ class SettingsTableSeeder extends Seeder
                 'type' => 'text',
                 'order' => 6,
                 'group' => 'Admin',
+            ),
+            11 => 
+            array (
+                'id' => 12,
+                'key' => 'site.fb',
+                'display_name' => 'fb',
+                'value' => 'http://google.com.vn/',
+                'details' => NULL,
+                'type' => 'text',
+                'order' => 7,
+                'group' => 'Site',
+            ),
+            12 => 
+            array (
+                'id' => 13,
+                'key' => 'site.tw',
+                'display_name' => 'tw',
+                'value' => 'http://google.com.vn/',
+                'details' => NULL,
+                'type' => 'text',
+                'order' => 8,
+                'group' => 'Site',
+            ),
+            13 => 
+            array (
+                'id' => 14,
+                'key' => 'site.youtube',
+                'display_name' => 'youtube',
+                'value' => 'http://google.com.vn/',
+                'details' => NULL,
+                'type' => 'text',
+                'order' => 9,
+                'group' => 'Site',
+            ),
+            14 => 
+            array (
+                'id' => 15,
+                'key' => 'site.slide',
+                'display_name' => 'slide',
+                'value' => '<div id="demo" class="carousel slide" data-ride="carousel">
+
+<!-- Indicators -->
+<ul class="carousel-indicators">
+<li data-target="#demo" data-slide-to="0" class="active"></li>
+<li data-target="#demo" data-slide-to="1"></li>
+<li data-target="#demo" data-slide-to="2"></li>
+</ul>
+
+<!-- The slideshow -->
+<div class="carousel-inner">
+<div class="carousel-item active">
+<img src="https://www.w3schools.com/howto/img_mountains_wide.jpg" alt="Los Angeles">
+</div>
+<div class="carousel-item">
+<img src="https://www.w3schools.com/howto/img_mountains_wide.jpg" alt="Chicago">
+</div>
+<div class="carousel-item">
+<img src="https://www.w3schools.com/howto/img_mountains_wide.jpg" alt="New York">
+</div>
+</div>
+
+<!-- Left and right controls -->
+<a class="carousel-control-prev" href="#demo" data-slide="prev">
+<span class="carousel-control-prev-icon"></span>
+</a>
+<a class="carousel-control-next" href="#demo" data-slide="next">
+<span class="carousel-control-next-icon"></span>
+</a>
+
+</div>',
+                'details' => NULL,
+                'type' => 'code_editor',
+                'order' => 10,
+                'group' => 'Site',
             ),
         ));
         

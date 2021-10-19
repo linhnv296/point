@@ -16,6 +16,18 @@ class CollaboratorsUser extends Model
         'user_id',
         'user_course',
         'level',
+        'email',
+        'facebook',
+        'fullname',
+        'sex',
+        'date_of_birth',
+        'cmnd',
+        'phone',
+        'job',
+        'course',
+        'province',
+        'education',
+        'target',
     ];
 
     /**

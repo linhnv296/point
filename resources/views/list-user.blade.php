@@ -140,18 +140,6 @@
                         <button type="submit" class="btn btn-primary">Thêm tài khoản</button>
                     </form>
 
-
-
-                    <form class="form-inline" method="POST" enctype="multipart/form-data" action="{{ route('collaborators.store') }}">
-                        @csrf
-                        <div class="form-group mx-sm-3 mb-2">
-                            <input type="text" class="form-control" id="user_course" name="user_course" value="{{ old("user_course") }}">
-                        </div>
-                        <button type="submit" class="btn btn-primary mb-2">Thêm tài khoản</button>
-                    </form>
-                    @if($errors->any())
-                        <p class="text-left bg-warning">{{$errors->first()}}</p>
-                    @endif
                 </div>
             </div>
             <div>
