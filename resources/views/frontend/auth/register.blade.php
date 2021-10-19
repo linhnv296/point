@@ -176,7 +176,8 @@
                             @enderror
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Sign in</button>
+                    <button type="submit" class="btn btn-primary">Đăng ký</button>
+                    <a href="{{ route('auth.login') }}">Đăng nhập</a>
                 </form>
             </div>
         </div>

@@ -5,8 +5,8 @@
                 <div class="heading-brand">Đại sứ kết nối - THANH GIANG</div>
                 @if(auth()->user())
                     <div>
-                    <a href="{{route("auth.logout")}}" class="btn btn-warning">Đăng xuất</a>
-                    <a href="{{route("auth.change")}}" class="btn btn-primary">Đổi mật khẩu</a>
+                        <a href="{{route("auth.logout")}}" class="btn btn-warning">Đăng xuất</a>
+                        <a href="{{route("auth.change")}}" class="btn btn-primary">Đổi mật khẩu</a>
                     </div>
                 @else
                     <a href="{{route("auth.login")}}" class="btn btn-primary">Đăng nhập</a>
@@ -45,9 +45,11 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route("list.user") }}">Tặng point</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route("list.user") }}">Nâng cấp</a>
-                                </li>
+                                @if(auth()->user()->active_ctv < 1)
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route("show.upgrade") }}">Nâng cấp</a>
+                                    </li>
+                                @endif
                             @endif
                         </ul>
                         {{--                            <form class="form-inline my-2 my-lg-0">--}}

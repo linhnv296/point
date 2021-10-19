@@ -17,6 +17,7 @@ class AddConfirmEmailUsersTable extends Migration
             $table->dateTime('verify_email_at')->default(now());
             $table->string('key_verify')->nullable();
             $table->tinyInteger('active_ctv')->nullable()->default(0);
+            $table->string('cmnd')->nullable();
         });
     }
 
@@ -31,6 +32,7 @@ class AddConfirmEmailUsersTable extends Migration
             $table->dropColumn('verify_email_at');
             $table->dropColumn('key_verify');
             $table->dropColumn('active_ctv');
+            $table->dropColumn('cmnd');
         });
     }
 }

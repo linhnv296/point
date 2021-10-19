@@ -87,8 +87,31 @@ class AuthController extends Controller
 
         return redirect('/');
     }
+
+    public function showUpgrade (Request $request){
+        $user = Auth::user();
+        if ($user->active_ctv >= 1) {
+            return redirect('/');
+        }
+        return view('frontend/require_upgrade', compact('user'));
+    }
+    public function upgradeRequired (Request $request){
+        if ($request->input('user_id') != Auth::user()->id){
+            return redirect()->back();
+        }
+        $user = Auth::user();
+        $user->active_ctv = 1;
+        $user->save();
+        return redirect('/');
+    }
     public function upgradeAccount (Request $request){
         $users = User::query()->where('active_ctv', "=", 1)->get();
-        dd($users);
+        return view('vendor/voyager/admin/upgrade/list', compact('users'));
+    }
+    public function upgradeAccountDetail (Request $request){
+        $id = request('id');
+        $user = User::query()->where('id', $id)->first();
+
+        return view('vendor/voyager/admin/upgrade/detail',compact('user'));
     }
 }

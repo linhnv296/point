@@ -35,7 +35,10 @@ Route::post('/update-ctv', '\App\Http\Controllers\CollaboratorsUserController@up
 Route::get('/collaborators-users/{id}/verification', '\App\Http\Controllers\CollaboratorsUserController@verificationAccount')->middleware('auth')->name('collaborators.verify');
 Route::post('/collaborators-users/{id}/verification', '\App\Http\Controllers\CollaboratorsUserController@storeVerificationAccount')->middleware('auth')->name('collaborators.storeVerify');
 Route::get('ctv-export', 'CollaboratorsUserController@export')->name('ctv-export');
+Route::get('nang_cap', '\App\Http\Controllers\Auth\AuthController@showUpgrade')->name('show.upgrade');
+Route::post('nang_cap', '\App\Http\Controllers\Auth\AuthController@upgradeRequired')->name('upgrade.required');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
     Route::get('/nang_cap', '\App\Http\Controllers\Auth\AuthController@upgradeAccount')->middleware('auth')->name('auth.upgrade.account');
+    Route::get('/nang_cap/{id}', '\App\Http\Controllers\Auth\AuthController@upgradeAccountDetail')->middleware('auth')->name('auth.upgrade.detail');
 });
